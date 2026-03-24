@@ -17,6 +17,7 @@ import type { Product } from "@/data/products";
 import { useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
+import PeptideBodyViewer from "@/components/BodyViewer";
 
 export default function ProductDetailClient({
   product,
@@ -202,6 +203,9 @@ export default function ProductDetailClient({
               </div>
             </div>
           </div>
+
+          {/* 3D Body Effects Viewer */}
+          <PeptideBodyViewer slug={product.slug} />
 
           {/* Tabs: Description & Specs */}
           <div className="mt-16">
