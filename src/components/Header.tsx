@@ -19,18 +19,17 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 glass">
-        <div className="divider-gold" />
+      <header className="sticky top-0 z-50 bg-white border-b border-border-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center transition-transform group-hover:scale-105">
+              <div className="w-9 h-9 rounded-lg bg-gold flex items-center justify-center transition-transform group-hover:scale-105">
                 <FlaskConical className="w-5 h-5 text-bg-primary" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold tracking-tight text-text-primary leading-tight">
-                  Peptide<span className="text-gradient-gold">Lab</span>
+                  Peptide<span className="text-gold">Lab</span>
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-text-muted leading-tight">
                   México
@@ -44,7 +43,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-text-secondary hover:text-gold transition-colors rounded-md hover:bg-white/[0.03]"
+                  className="px-4 py-2 text-sm font-medium text-text-secondary hover:text-gold transition-colors rounded-md hover:bg-bg-hover"
                 >
                   {link.label}
                 </Link>
@@ -55,14 +54,14 @@ export default function Header() {
             <div className="flex items-center gap-2">
               <Link
                 href="/productos"
-                className="hidden sm:flex items-center justify-center w-10 h-10 rounded-lg text-text-secondary hover:text-gold hover:bg-white/[0.03] transition-colors"
+                className="hidden sm:flex items-center justify-center w-10 h-10 rounded-lg text-text-secondary hover:text-gold hover:bg-bg-hover transition-colors"
               >
                 <Search className="w-[18px] h-[18px]" />
               </Link>
 
               <button
                 onClick={() => setIsOpen(true)}
-                className="relative flex items-center justify-center w-10 h-10 rounded-lg text-text-secondary hover:text-gold hover:bg-white/[0.03] transition-colors"
+                className="relative flex items-center justify-center w-10 h-10 rounded-lg text-text-secondary hover:text-gold hover:bg-bg-hover transition-colors"
               >
                 <ShoppingCart className="w-[18px] h-[18px]" />
                 {totalItems > 0 && (
@@ -96,7 +95,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-4 py-3 text-sm font-medium text-text-secondary hover:text-gold hover:bg-white/[0.03] rounded-lg transition-colors"
+                  className="px-4 py-3 text-sm font-medium text-text-secondary hover:text-gold hover:bg-bg-hover rounded-lg transition-colors"
                 >
                   {link.label}
                 </Link>

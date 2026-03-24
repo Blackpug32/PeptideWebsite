@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #222222;
-  --bg-card: #2a2a2a;
-  --bg-hover: #333333;
-  --text-primary: #f0ede8;
-  --text-secondary: #b8b5af;
-  --text-muted: #8a8780;
-  --gold: #c9a84c;
-  --gold-light: #dfc06e;
-  --gold-dark: #a88a32;
-  --sage: #7d9a7a;
-  --sage-light: #9bb598;
-  --sage-dark: #5f7a5c;
-  --border-color: #3a3a3a;
-  --border-subtle: #2e2e2e;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-hover: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  /* navy — replaces gold tokens so all text-gold/bg-gold classes render navy */
+  --gold: #1b3a5c;
+  --gold-light: #2d5f8a;
+  --gold-dark: #122840;
+  /* teal — replaces sage tokens so all text-sage/bg-sage classes render teal */
+  --sage: #0d9488;
+  --sage-light: #14b8a6;
+  --sage-dark: #0f766e;
+  --border-color: #e2e8f0;
+  --border-subtle: #f1f5f9;
 }
 
 @theme inline {
@@ -34,7 +36,8 @@
   --color-sage-dark: var(--sage-dark);
   --color-border-color: var(--border-color);
   --color-border-subtle: var(--border-subtle);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-plex-sans);
+  --font-serif: var(--font-plex-serif);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -56,136 +59,61 @@ body {
 }
 
 ::selection {
-  background: var(--gold);
-  color: var(--bg-primary);
+  background: var(--sage);
+  color: #ffffff;
 }
 
-/* Subtle grain texture overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  opacity: 0.015;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-}
-
-/* Custom animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Minimal fade animation — kept for drawer/overlay reveals */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-@keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.3); }
-  50% { box-shadow: 0 0 20px 4px rgba(201, 168, 76, 0.15); }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.7s ease-out forwards;
-}
-
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.25s ease-out forwards;
 }
 
-.animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.08), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 3s infinite;
-}
-
-.animate-pulse-gold {
-  animation: pulse-gold 3s ease-in-out infinite;
-}
-
-/* Stagger animations */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
-
-/* Gold gradient text */
-.text-gradient-gold {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Elegant button styles */
+/* Button styles */
 .btn-primary {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  color: var(--bg-primary);
+  background: var(--gold);
+  color: #ffffff;
   font-weight: 600;
   padding: 0.75rem 2rem;
   border-radius: 0.375rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold));
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
+  background: var(--gold-light);
+  box-shadow: 0 4px 16px rgba(27, 58, 92, 0.2);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .btn-secondary {
-  border: 1px solid var(--gold);
+  border: 1.5px solid var(--gold);
   color: var(--gold);
   font-weight: 500;
   padding: 0.75rem 2rem;
   border-radius: 0.375rem;
-  transition: all 0.3s ease;
+  transition: background 0.2s ease, color 0.2s ease;
   background: transparent;
 }
 
 .btn-secondary:hover {
-  background: rgba(201, 168, 76, 0.1);
-  border-color: var(--gold-light);
-  color: var(--gold-light);
+  background: var(--gold);
+  color: #ffffff;
 }
 
 /* Card hover effect */
 .card-hover {
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(201, 168, 76, 0.1);
-}
-
-/* Divider with gold accent */
-.divider-gold {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0.3;
-}
-
-/* Glass effect */
-.glass {
-  background: rgba(42, 42, 42, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(27, 58, 92, 0.06);
 }

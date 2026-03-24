@@ -17,7 +17,7 @@ import type { Product } from "@/data/products";
 import { useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
-import PeptideBodyViewer from "@/components/BodyViewer";
+
 
 export default function ProductDetailClient({
   product,
@@ -138,7 +138,7 @@ export default function ProductDetailClient({
                 <div className="flex items-center border border-border-color rounded-lg overflow-hidden">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="w-12 h-12 flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-white/[0.05] transition-colors"
+                    className="w-12 h-12 flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-bg-hover transition-colors"
                   >
                     <Minus className="w-4 h-4" />
                   </button>
@@ -147,7 +147,7 @@ export default function ProductDetailClient({
                   </span>
                   <button
                     onClick={() => setQuantity(quantity + 1)}
-                    className="w-12 h-12 flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-white/[0.05] transition-colors"
+                    className="w-12 h-12 flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-bg-hover transition-colors"
                   >
                     <Plus className="w-4 h-4" />
                   </button>
@@ -203,9 +203,6 @@ export default function ProductDetailClient({
               </div>
             </div>
           </div>
-
-          {/* 3D Body Effects Viewer */}
-          <PeptideBodyViewer slug={product.slug} />
 
           {/* Tabs: Description & Specs */}
           <div className="mt-16">
@@ -271,7 +268,7 @@ export default function ProductDetailClient({
           {relatedProducts.length > 0 && (
             <div className="mt-16 pt-16 border-t border-border-subtle">
               <h2 className="text-2xl font-bold text-text-primary mb-8">
-                Productos <span className="text-gradient-gold">relacionados</span>
+                Productos <span className="text-sage">relacionados</span>
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {relatedProducts.map((p) => (

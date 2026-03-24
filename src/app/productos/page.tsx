@@ -47,13 +47,10 @@ function ProductsContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-16 lg:py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-gold/[0.03] rounded-full blur-[120px]" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary">
-            Catálogo de <span className="text-gradient-gold">Péptidos</span>
+            Catálogo de <span className="text-sage">Péptidos</span>
           </h1>
           <p className="mt-4 text-lg text-text-secondary max-w-2xl">
             Todos nuestros péptidos son de grado investigación con pureza 99%+ y
@@ -62,7 +59,6 @@ function ProductsContent() {
         </div>
       </section>
 
-      <div className="divider-gold" />
 
       {/* Filters & Products */}
       <section className="py-12 lg:py-16">
@@ -108,7 +104,7 @@ function ProductsContent() {
                     className={`flex items-center justify-between px-4 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
                       selectedCategory === cat.id
                         ? "bg-gold/15 text-gold border border-gold/20"
-                        : "text-text-secondary hover:text-text-primary hover:bg-white/[0.03] border border-transparent"
+                        : "text-text-secondary hover:text-text-primary hover:bg-bg-hover border border-transparent"
                     }`}
                   >
                     <span>{cat.name}</span>

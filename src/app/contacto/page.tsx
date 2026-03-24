@@ -13,15 +13,6 @@ import {
 
 const contactMethods = [
   {
-    icon: MessageCircle,
-    title: "WhatsApp",
-    description: "Respuesta inmediata en horario laboral",
-    value: "+52 (81) 1234-5678",
-    href: "https://wa.me/528112345678",
-    accent: "text-[#25D366]",
-    bg: "bg-[#25D366]/10",
-  },
-  {
     icon: Mail,
     title: "Email",
     description: "Respuesta en menos de 24 horas",
@@ -38,6 +29,15 @@ const contactMethods = [
     href: "tel:+528112345678",
     accent: "text-sage",
     bg: "bg-sage/10",
+  },
+  {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    description: "Respuesta inmediata en horario laboral",
+    value: "+52 (81) 1234-5678",
+    href: "https://wa.me/528112345678",
+    accent: "text-[#25D366]",
+    bg: "bg-[#25D366]/10",
   },
   {
     icon: MapPin,
@@ -68,13 +68,10 @@ export default function ContactoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-16 lg:py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-1/3 w-[400px] h-[400px] bg-sage/[0.03] rounded-full blur-[120px]" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary">
-            <span className="text-gradient-gold">Contáctanos</span>
+            <span className="text-sage">Contáctanos</span>
           </h1>
           <p className="mt-4 text-lg text-text-secondary max-w-2xl">
             ¿Tienes dudas sobre nuestros péptidos o necesitas una cotización
@@ -83,7 +80,6 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      <div className="divider-gold" />
 
       <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -22,25 +22,7 @@ export default function ProductCard({ product }: { product: Product }) {
       {/* Image area */}
       <Link href={`/productos/${product.slug}`}>
         <div className="relative aspect-square bg-gradient-to-br from-bg-secondary to-bg-primary flex items-center justify-center overflow-hidden">
-          <div className="relative">
-            {/* Decorative molecule */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-[0.04]">
-              <svg viewBox="0 0 200 200" className="w-48 h-48">
-                <circle cx="100" cy="50" r="8" fill="currentColor" />
-                <circle cx="50" cy="120" r="8" fill="currentColor" />
-                <circle cx="150" cy="120" r="8" fill="currentColor" />
-                <circle cx="100" cy="170" r="6" fill="currentColor" />
-                <line x1="100" y1="50" x2="50" y2="120" stroke="currentColor" strokeWidth="2" />
-                <line x1="100" y1="50" x2="150" y2="120" stroke="currentColor" strokeWidth="2" />
-                <line x1="50" y1="120" x2="150" y2="120" stroke="currentColor" strokeWidth="2" />
-                <line x1="100" y1="170" x2="50" y2="120" stroke="currentColor" strokeWidth="2" />
-                <line x1="100" y1="170" x2="150" y2="120" stroke="currentColor" strokeWidth="2" />
-              </svg>
-            </div>
-            <FlaskConical className="w-20 h-20 text-gold/20 group-hover:text-gold/30 transition-colors duration-500" />
-          </div>
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-bg-card/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <FlaskConical className="w-20 h-20 text-gold/20" />
         </div>
       </Link>
 

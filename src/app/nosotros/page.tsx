@@ -114,12 +114,8 @@ export default function NosotrosPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-gold/[0.03] rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 right-1/3 w-[400px] h-[400px] bg-sage/[0.03] rounded-full blur-[100px]" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-sage/20 bg-sage/5 mb-8">
               <Microscope className="w-3.5 h-3.5 text-sage" />
@@ -129,7 +125,7 @@ export default function NosotrosPage() {
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-text-primary leading-tight mb-6">
               Ciencia al servicio de la{" "}
-              <span className="text-gradient-gold">investigación</span>
+              <span className="text-sage">investigación</span>
             </h1>
             <p className="text-lg text-text-secondary leading-relaxed">
               Somos un equipo de profesionales apasionados por facilitar el
@@ -141,7 +137,6 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      <div className="divider-gold" />
 
       {/* Mission & Vision */}
       <section className="py-20 lg:py-24 bg-bg-secondary">
@@ -184,7 +179,7 @@ export default function NosotrosPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-              Nuestros <span className="text-gradient-gold">Valores</span>
+              Nuestros <span className="text-sage">Valores</span>
             </h2>
             <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
               Los principios que guían cada decisión en PeptideLab
@@ -212,14 +207,13 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      <div className="divider-gold max-w-4xl mx-auto" />
 
       {/* Timeline */}
       <section className="py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-              Nuestra <span className="text-gradient-gold">Trayectoria</span>
+              Nuestra <span className="text-sage">Trayectoria</span>
             </h2>
           </div>
 
@@ -228,7 +222,7 @@ export default function NosotrosPage() {
               <div key={milestone.year} className="flex gap-6 mb-10 last:mb-0">
                 <div className="flex flex-col items-center">
                   <div className="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                    <span className="text-sm font-bold text-gradient-gold">
+                    <span className="text-sm font-bold text-gold">
                       {milestone.year}
                     </span>
                   </div>
@@ -259,7 +253,7 @@ export default function NosotrosPage() {
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
               Certificaciones y{" "}
-              <span className="text-gradient-gold">Calidad</span>
+              <span className="text-sage">Calidad</span>
             </h2>
             <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
               Nuestro compromiso con la calidad se refleja en cada etapa del
@@ -314,7 +308,7 @@ export default function NosotrosPage() {
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
               Preguntas{" "}
-              <span className="text-gradient-gold">Frecuentes</span>
+              <span className="text-sage">Frecuentes</span>
             </h2>
           </div>
 

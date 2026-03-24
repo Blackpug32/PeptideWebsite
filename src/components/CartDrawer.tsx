@@ -30,7 +30,7 @@ export default function CartDrawer() {
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="w-9 h-9 rounded-lg flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-white/[0.05] transition-colors"
+            className="w-9 h-9 rounded-lg flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-bg-hover transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -64,7 +64,7 @@ export default function CartDrawer() {
                 >
                   {/* Product image placeholder */}
                   <div className="w-20 h-20 rounded-lg bg-bg-primary flex items-center justify-center shrink-0 border border-border-subtle">
-                    <span className="text-2xl font-bold text-gradient-gold">
+                    <span className="text-2xl font-bold text-gold">
                       {item.product.name.charAt(0)}
                     </span>
                   </div>
@@ -134,7 +134,7 @@ export default function CartDrawer() {
             <p className="text-xs text-text-muted mb-4">
               Envío calculado al finalizar la compra
             </p>
-            <button className="btn-primary w-full text-center animate-pulse-gold">
+            <button className="btn-primary w-full text-center">
               Finalizar compra
             </button>
             <button

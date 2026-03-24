@@ -5,7 +5,6 @@ import {
   Truck,
   Award,
   ArrowRight,
-  Star,
   Microscope,
   Beaker,
   Atom,
@@ -32,9 +31,9 @@ const trustFeatures = [
   },
   {
     icon: Truck,
-    title: "Envío Discreto Nacional",
+    title: "Envío con Cadena de Frío",
     description:
-      "Envío con rastreo a toda la República Mexicana. Empaque discreto con control de temperatura para preservar la integridad.",
+      "Envío con rastreo a toda la República Mexicana. Empaque con control de temperatura para preservar la integridad del péptido.",
     accent: "sage" as const,
   },
   {
@@ -50,27 +49,6 @@ const trustFeatures = [
     description:
       "Péptidos de grado investigación utilizados por laboratorios e instituciones académicas en toda Latinoamérica.",
     accent: "sage" as const,
-  },
-];
-
-const testimonials = [
-  {
-    name: "Dr. Roberto M.",
-    role: "Investigador, UANL",
-    text: "La pureza de los péptidos de PeptideLab ha sido consistente en todos nuestros pedidos. El COA que proporcionan es verificable y detallado.",
-    rating: 5,
-  },
-  {
-    name: "Lab. Bioquímica Avanzada",
-    role: "Laboratorio, CDMX",
-    text: "Excelente servicio y tiempos de entrega. Los péptidos llegan en perfectas condiciones y con toda la documentación necesaria.",
-    rating: 5,
-  },
-  {
-    name: "Dra. Carolina S.",
-    role: "Investigadora, ITESM",
-    text: "Llevamos más de un año trabajando con PeptideLab. La calidad es comparable a proveedores internacionales pero con entrega mucho más rápida.",
-    rating: 5,
   },
 ];
 
@@ -111,43 +89,30 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gold/[0.03] rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-sage/[0.03] rounded-full blur-[100px]" />
-        </div>
-
-        <div
-          className="absolute inset-0 opacity-[0.015]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:pt-32 lg:pb-36">
+      <section className="py-20 pb-24 lg:py-32 lg:pb-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold/20 bg-gold/5 mb-8 animate-fade-in-up">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold/20 bg-gold/5 mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
               <span className="text-xs font-medium text-gold tracking-wide">
                 Péptidos de investigación · Pureza 99%+
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] animate-fade-in-up stagger-1">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
               Péptidos de{" "}
-              <span className="text-gradient-gold">alta pureza</span>
+              <span className="text-sage">alta pureza</span>
               <br />
               para investigación
             </h1>
 
-            <p className="mt-6 text-lg sm:text-xl text-text-secondary leading-relaxed max-w-2xl animate-fade-in-up stagger-2">
+            <p className="mt-6 text-lg sm:text-xl text-text-secondary leading-relaxed max-w-2xl">
               Proveedor líder en México de péptidos de grado investigación.
               Cada producto incluye Certificado de Análisis verificable y envío
               con control de temperatura.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-3">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link href="/productos" className="btn-primary text-center text-base inline-flex items-center justify-center gap-2">
                 Explorar catálogo
                 <ArrowRight className="w-4 h-4" />
@@ -157,10 +122,10 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 animate-fade-in-up stagger-4">
+            <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center sm:text-left">
-                  <div className="text-2xl sm:text-3xl font-bold text-gradient-gold">
+                  <div className="text-2xl sm:text-3xl font-bold text-gold">
                     {stat.value}
                   </div>
                   <div className="text-sm text-text-muted mt-1">
@@ -171,8 +136,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
-        <div className="divider-gold" />
       </section>
 
       {/* Categories Section */}
@@ -180,7 +143,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-              Categorías de <span className="text-gradient-gold">Investigación</span>
+              Categorías de <span className="text-sage">Investigación</span>
             </h2>
             <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
               Explora nuestra selección de péptidos organizados por área de investigación
@@ -221,7 +184,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-                Productos <span className="text-gradient-gold">Destacados</span>
+                Productos <span className="text-sage">Destacados</span>
               </h2>
               <p className="mt-3 text-text-secondary">
                 Los péptidos más solicitados por investigadores en México
@@ -244,7 +207,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="divider-gold max-w-4xl mx-auto" />
 
       {/* Trust Features */}
       <section className="py-20 lg:py-24">
@@ -252,7 +214,7 @@ export default function HomePage() {
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
               ¿Por qué elegir{" "}
-              <span className="text-gradient-gold">PeptideLab</span>?
+              <span className="text-sage">PeptideLab</span>?
             </h2>
             <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
               Nos distinguimos por nuestro compromiso con la calidad,
@@ -289,47 +251,62 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Research Resources */}
       <section className="py-20 lg:py-24 bg-bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-              Lo que dicen nuestros{" "}
-              <span className="text-gradient-gold">investigadores</span>
+              Recursos para{" "}
+              <span className="text-sage">investigadores</span>
             </h2>
             <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
-              La confianza de laboratorios e instituciones en toda la República
-              Mexicana
+              Protocolos y referencias técnicas para el manejo adecuado de péptidos en laboratorio
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.name}
-                className="p-7 rounded-xl bg-bg-card border border-border-subtle card-hover"
-              >
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-gold text-gold"
-                    />
-                  ))}
-                </div>
-                <p className="text-sm text-text-secondary leading-relaxed mb-6 italic">
-                  &ldquo;{testimonial.text}&rdquo;
-                </p>
-                <div>
-                  <p className="text-sm font-semibold text-text-primary">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-xs text-text-muted mt-0.5">
-                    {testimonial.role}
-                  </p>
-                </div>
+            <div className="p-7 rounded-xl bg-bg-card border border-border-subtle">
+              <div className="w-12 h-12 rounded-lg bg-sage/10 flex items-center justify-center mb-5">
+                <FlaskConical className="w-6 h-6 text-sage" />
               </div>
-            ))}
+              <h3 className="text-lg font-semibold text-text-primary mb-3">
+                Reconstitución y almacenamiento
+              </h3>
+              <ul className="space-y-2 text-sm text-text-secondary">
+                <li>Reconstituir en agua estéril o solución salina al 0.9%</li>
+                <li>Polvo liofilizado: −20 °C hasta 24 meses</li>
+                <li>Solución reconstituida: 2–8 °C, usar en 4–8 semanas</li>
+                <li>Evitar ciclos repetidos de congelación/descongelación</li>
+              </ul>
+            </div>
+            <div className="p-7 rounded-xl bg-bg-card border border-border-subtle">
+              <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mb-5">
+                <Microscope className="w-6 h-6 text-gold" />
+              </div>
+              <h3 className="text-lg font-semibold text-text-primary mb-3">
+                Control de calidad analítico
+              </h3>
+              <ul className="space-y-2 text-sm text-text-secondary">
+                <li>HPLC-UV: pureza ≥99% por área de pico</li>
+                <li>MS (ESI o MALDI): confirmación de masa molecular</li>
+                <li>Karl Fischer: contenido de agua &lt;8%</li>
+                <li>COA disponible por número de lote</li>
+              </ul>
+            </div>
+            <div className="p-7 rounded-xl bg-bg-card border border-border-subtle">
+              <div className="w-12 h-12 rounded-lg bg-sage/10 flex items-center justify-center mb-5">
+                <ShieldCheck className="w-6 h-6 text-sage" />
+              </div>
+              <h3 className="text-lg font-semibold text-text-primary mb-3">
+                Marco regulatorio
+              </h3>
+              <ul className="space-y-2 text-sm text-text-secondary">
+                <li>Uso exclusivo para investigación científica</li>
+                <li>No aptos para diagnóstico ni uso terapéutico</li>
+                <li>Cumplimiento con NOM-059-SSA1 para reactivos</li>
+                <li>Factura fiscal con desglose de lote incluida</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -339,7 +316,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-              Cómo <span className="text-gradient-gold">funciona</span>
+              Cómo <span className="text-sage">funciona</span>
             </h2>
             <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
               Proceso simple y seguro para obtener tus péptidos de investigación
@@ -364,12 +341,12 @@ export default function HomePage() {
                 step: "03",
                 title: "Recibe en tu laboratorio",
                 description:
-                  "Envío discreto con rastreo y control de temperatura. Incluye COA verificable.",
+                  "Envío con cadena de frío y rastreo. Control de temperatura garantizado. Incluye COA verificable.",
               },
             ].map((item) => (
               <div key={item.step} className="text-center relative">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gold/10 border border-gold/20 mb-6">
-                  <span className="text-xl font-bold text-gradient-gold">
+                  <span className="text-xl font-bold text-gold">
                     {item.step}
                   </span>
                 </div>
@@ -386,12 +363,11 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.04] via-transparent to-sage/[0.04]" />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 lg:py-24 bg-bg-secondary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-6">
             ¿Listo para impulsar tu{" "}
-            <span className="text-gradient-gold">investigación</span>?
+            <span className="text-sage">investigación</span>?
           </h2>
           <p className="text-lg text-text-secondary mb-10 max-w-2xl mx-auto">
             Únete a cientos de investigadores y laboratorios en México que

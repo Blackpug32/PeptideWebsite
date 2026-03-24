@@ -53,7 +53,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-text-primary">Envío a todo México</p>
-                <p className="text-xs text-text-muted mt-0.5">Discreto y con rastreo incluido</p>
+                <p className="text-xs text-text-muted mt-0.5">Cadena de frío y rastreo incluido</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -75,12 +75,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center">
+              <div className="w-9 h-9 rounded-lg bg-gold flex items-center justify-center">
                 <FlaskConical className="w-5 h-5 text-bg-primary" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold tracking-tight text-text-primary leading-tight">
-                  Peptide<span className="text-gradient-gold">Lab</span>
+                  Peptide<span className="text-gold">Lab</span>
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-text-muted leading-tight">
                   México
